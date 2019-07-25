@@ -3,7 +3,7 @@ require"colorize"
 
 class Game
 
-	def initialize(player1_name, player1_sign, player2_name, player2_sign, games_count, player1_win_count, player2_win_count)
+	def initialize(player1_name, player1_sign, player2_name, player2_sign, games_count)
 
 		#initialize game board
 		@game_hash = {
@@ -74,7 +74,6 @@ class Game
 				show_game_visual
 				puts
 				puts("#{player_name} A GAGNÉ !")
-				player_win_count = player_win_count + 1
 				replay
 
 				@victory = true
@@ -168,7 +167,7 @@ class Game
 		replay_choice = gets.chomp.to_s # require user answer to replay
 		if replay_choice == "oui"
 			@games_count += 1 # if yes, add round to game count
-			game = Game.new(@player1_name, @player1_sign, @player2_name, @player2_sign, @games_count, @player1_win_count, @player2_win_count)
+			game = Game.new(@player1_name, @player1_sign, @player2_name, @player2_sign, @games_count)
 			game.full_game # and replay full game 
 		elsif replay_choice == "non"
 			abort # if no, stop the game

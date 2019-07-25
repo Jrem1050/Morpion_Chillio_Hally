@@ -17,7 +17,7 @@ player2_sign = players.player2_sign
 games_count = 1
 
 #initialize game
-game = Game.new(player1_name, player1_sign, player2_name, player2_sign, games_count, player1_win_count, player2_win_count)
+game = Game.new(player1_name, player1_sign, player2_name, player2_sign, games_count)
 
 #perform game
 game.full_game
